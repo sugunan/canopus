@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+      <title>Carina Chat</title>
+      <link rel="stylesheet" href="css/sub.css" />
+  </head>
+  <body>
+    <noscript>
+      <h2>Sorry! Your browser doesn't support Javascript</h2>
+    </noscript>
+    
+    
+    <div class="body-wrapper">
+        <div class="column-left">
+        	<div class="column-subject title-text">Visitors</div>
+        	<div class="visitors-list">Sugunan</div>
+        	<div class="visitors-list">Sugirthan</div>
+        	<div class="visitors-list">Visitor 01</div>
+        	<div class="visitors-list">Visitor 02</div>
+        </div>
+        <div class="column-middle">
+        	<div class="conversation-wrap">
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+			</div>
+			<div class="chat-form-wrap">
+				<input type="text" class="agent-chat-input"/>
+			</div>
+		</div>
+        <div class="column-right">
+        	
+        </div>
+    </div>
+
+
+    <script src="js/common.min.js"></script>
+    <script src="js/chat.js?m"></script>
+    <script>
+    connect()
+    $.noConflict();
+	jQuery( document ).ready(function( $ ) {
+	  	console.log(getCookie("carina_name"));
+	});
+    </script>
+  </body>
+</html>

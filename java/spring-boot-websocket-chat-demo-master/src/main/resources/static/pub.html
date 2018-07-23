@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+      <title>Carina Chat</title>
+      <link rel="stylesheet" href="css/pub.css" />
+  </head>
+  <body>
+    <noscript>
+      <h2>Sorry! Your browser doesn't support Javascript</h2>
+    </noscript>
+
+	<div class="chat-wrapper">
+        <div class="column-middle">
+        	<div class="conversation-wrap">
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+				<div class="visitor-msg"><span class="chat-name">Sugunan</span><br> How can i check my balance?</div>
+				<div class="agent-msg"><span class="chat-name">Sugirthan</span><br> Login to the portal</div>
+			</div>
+			<div class="chat-form-wrap">
+				<input type="text" class="agent-chat-input"/>
+			</div>
+		</div>
+    </div>
+    
+    
+    <script src="js/common.min.js"></script>
+    <script src="js/chat.js?hj"></script>
+    <script>
+    connect()
+    $.noConflict();
+	jQuery( document ).ready(function( $ ) {
+		setTimeout(function(){ sendMessage() }, 3000);
+	    setCookie("carina_name", "sugunan", 1)
+	});
+    
+    </script>
+  </body>
+</html>
