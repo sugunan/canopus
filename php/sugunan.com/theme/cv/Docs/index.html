@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>John Smith. Personal CV/Portfolio Website Template</title>
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+    <style type="text/css" media="screen">
+        p, table, hr, .box {
+            margin-bottom: 25px;
+        }
+        
+        .box p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3 class="center alt">&ldquo;John Smith. Personal CV/Portfolio Website Template&rdquo; Documentation by Sergei Odincov v1.0</h3>
+        <hr><h1 class="center">&ldquo;John Smith. Personal CV/Portfolio Website Template&rdquo;</h1>
+        <div class="borderTop">
+            <div class="span-6 colborder info prepend-1">
+                <p class="prepend-top">
+                    <strong>Created: 31/10/2010
+                        <br>
+                        By: Sergei Odincov
+                        <br>
+                        Email: <a href="mailto:sergei@odincov.net">sergei@odincov.net</a>
+                    </strong>
+                </p>
+            </div>
+            <!-- end div .span-6 -->
+            <div class="span-12 last">
+                <p class="prepend-top append-0">
+                    Thank you for purchasing my website template. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/odincov">here</a>. Thanks so much!
+                </p>
+            </div>
+        </div>
+        <!-- end div .borderTop --><hr><h2 id="toc" class="alt">Table of Contents</h2>
+        <ol class="alpha">
+            <li>
+                <a href="#templateStructure">Template Structure</a>
+                <ol>
+                    <li>
+                        <a href="#templateLayout">General Layout</a>
+                    </li>
+                    <li>
+                        <a href="#templateBlocks">'Page', 'Header' and 'Footer' blocks</a>
+                    </li>
+                    <li>
+                        <a href="#templateSubblocks">Portfolio page Sub Blocks</a>
+                    </li>
+                    <li>
+                        <a href="#templateNavigation">Navigation, Hash URL</a>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="#htmlStructure">HTML Structure</a>
+				<ol>
+                    <li>
+                        <a href="#htmlGeneral">General</a>
+                    </li>
+					<li>
+                        <a href="#htmlPages">Pages</a>
+                    </li>
+					<li>
+                        <a href="#htmlHeaderFooter">Header and Footer</a>
+                    </li>
+					<li>
+                        <a href="#htmlNivoSlider">Nivo slider</a>
+                    </li>
+					<li>
+                        <a href="#htmlFeaturedWorks">Featured works</a>
+                    </li>
+                    <li>
+                        <a href="#htmlPortfolioPages">Sub Blocks</a>
+                    </li>
+                </ol>
+            </li>
+			<li>
+                <a href="#css">CSS Files and Structure</a>
+            </li>
+			<li>
+                <a href="#javascript">JavaScript</a>
+            </li>
+			<li>
+                <a href="#contact">Contact Form and PHP Code Explanation</a>
+            </li>
+            <li>
+                <a href="#psdFiles">PSD Files</a>
+            </li>
+            <li>
+                <a href="#credits">Sources and Credits</a>
+            </li>
+        </ol>
+        <hr>
+        <p>
+            "John Smith" is a one-page CV/Portfolio website template. It's built to tell a story about a professional designer/web developer to a possible employer or a hirer. Smoothly navigating from section to section a visitor will get the full picture of you as of a professional.
+        </p>
+		
+        <h3 id="templateStructure"><strong>A) Template Structure</strong> - <a href="#toc">top</a></h3>
+        <p>
+            Although "John Smith" is meant to be a one-page website template (and technically it's only one html file) the visitor will have several-page website experience but without any browser refreshment and with a smooth scroll-to effect for switching between sections. Instead of scrolling the window content "John Smith" template built to scroll particular Div content. This method allows to hide superfluous sections and show selected only. A special javascript function recalculates main Div height for each viewing page.
+        </p>
+		
+		
+		<h3 id="templateLayout"><strong>A.1) General layout</strong> - <a href="#toc">top</a></h3>
+        <p>
+        	If you start studying html files you will see that the template has three wrappers. One of them with the id "frame" is your main frame. It contains a div with a class name "pages", which in it's turn is a container for all your pages.(Two others are for the layout positioning) There are also several div blocks with a class name "page" inside the container "pages". Each of them holds some particular page.
+        </p>
+		<p>
+			Look at this image below to get the idea:
+		</p>
+        <img src="assets/images/scheme_1.jpg" alt="Scheme 1" />
+        <p>
+            When you are navigating to some page, div#frame is scrolled to the particular section of div.pages. After a new position of the frame is set, div#frame changes it's height to fit the content block. All other stuff is hidden as overflown.
+        </p>
+		<p>
+			Each div.page block must have unique ID and this is important for the navigation.
+			Setting up any navigational link to the particular page you have to use this construction:
+		</p>
+        <pre>	&lt;a href=&ldquo;#page_id&rdquo; rel=&ldquo;page_id&rdquo; class=&ldquo;nav&rdquo;&gt;Some page&lt;/a&gt;
+		</pre>
+        <p>
+            A javascript function uses "rel" value for the navigation. "Href" value is used only then javascript is turned off.
+        </p>
+        
+		
+		<h3 id="templateBlocks"><strong>A.2) 'Page', 'Header' and 'Footer' blocks</strong> - <a href="#toc">top</a></h3>
+        <p>
+        	As you will see from the html file, each <strong>div.page</strong> block has <strong>div.content</strong> inside. 
+			But only the first one has <strong>div.header</strong> and only the last one has <strong>div.footer</strong>. 
+			There are two reasons for that. Firstly, if visitor's web browser doesn't support javascript, 
+			the page will still have the header, navigation and the footer in the right place (header and navigation at the top and footer at the bottom). 
+			Secondly, there is javascript to do all the dirty work for you. 
+			So, as soon as the document is loaded <strong>div.header</strong> will be cloned and inserted into each <strong>div.page</strong> right before <strong>div.content</strong> element, 
+			<strong>div.footer</strong> will be cloned and inserted in each <strong>div.page</strong> right after <strong>div.content</strong>.
+        </p>
+		<img src="assets/images/scheme_2.png" alt="Scheme 2" />
+		
+		
+		<h3 id="templateSubblocks"><strong>A.3) Portfolio pages / Sub blocks</strong> - <a href="#toc">top</a></h3>
+        <p>
+        	The same scroll-to effect is used to view your portfolio's works. But here you scroll horizontal. Scheme below will help you to understand the structure.
+        </p>
+		
+		<img src="assets/images/scheme_3.png" alt="Scheme 3" />
+		<p>
+			<strong>Div.blocks-holder</strong> can be scrolled to any particular <strong>div.block</strong>. 
+			This construction could be placed inside any <strong>div.content</strong>. One <strong>div.content</strong> element can have only one <strong>div.blocks-holder</strong>.
+		</p>
+		<p>
+			Each <strong>div.block</strong> must have unique ID which is important for the navigation. 
+		</p>
+		<p>
+			Link to the next block:
+		</p>
+		<pre>	&lt;a href=&ldquo;#next_block_id&rdquo; rel=&ldquo;next&rdquo; class=&ldquo;subnav next&rdquo;&gt;Next&lt;/a&gt;
+		</pre>
+		<p>
+			Link to the previous block:
+		</p>
+		<pre>	&lt;a href=&ldquo;#previous_block_id&rdquo; rel=&ldquo;prev&rdquo; class=&ldquo;subnav prev&rdquo;&gt;Previous&lt;/a&gt;
+		</pre>
+		<p>
+			Href attribute is used only when javascript support is turned off.
+		</p>
+		<p>
+			To navigate to particular sub block from some other page use this form of link:
+		</p>
+		<pre>	&lt;a href=&ldquo;#block_id&rdquo; rel=&ldquo;page_id:block_id&rdquo; class=&ldquo;goto&rdquo;&gt;Sub block on some page&lt;/a&gt;
+		</pre>
+		
+		
+		<h3 id="templateNavigation"><strong>A.4) Navigation, Hash URL</strong> - <a href="#toc">top</a></h3>
+        <p>
+        	It's very important to keep in mind that the navigation of the site is bind to javascript functions. 
+			Setting up the navigation links use one of the following class names: 'nav', 'goto' in general and 'prev', 'next' inside sub blocks. 
+			There are three different rules for using the links:
+        </p>
+		<p>
+			To navigate to any page from anywhere. 'Rel' element is related to the unique ID of the <strong>div.page</strong> element. This construction also used in the main navigation.
+		</p>
+		<pre>	&lt;a href=&ldquo;#page_id&rdquo; rel=&ldquo;page_id&rdquo; class=&ldquo;nav&rdquo;&gt;Some page&lt;/a&gt;
+		</pre>
+		
+		<p>
+			To navigate to some particular page and block from anywhere. 'Rel' element is related to page and block IDs. Those IDs should be separated by colon (page_id:block_id). 
+			This construction applyed to 'Show work' link of featured works on 'Home' page.
+		</p>
+		<pre>	&lt;a href=&ldquo;#block_id&rdquo; rel=&ldquo;page_id:block_id&rdquo; class=&ldquo;goto&rdquo;&gt;Sub block on some page&lt;/a&gt;
+		</pre>
+		
+		<p>
+			To navigate to next or previous div.block. Those are used only inside div.block element.
+		</p>
+		<pre>	&lt;a href=&ldquo;#next_block_id&rdquo; rel=&ldquo;next&rdquo; class=&ldquo;subnav next&rdquo;&gt;Next&lt;/a&gt;
+	&lt;a href=&ldquo;#previous_block_id&rdquo; rel=&ldquo;prev&rdquo; class=&ldquo;subnav prev&rdquo;&gt;Previous&lt;/a&gt;
+		</pre>
+		<p>
+			The url address always relevant to the current position of the website content. 
+			It changes hash each time the website visitor clicks something and allowes to use the direct url address to show some particular page to somebody.
+		</p>
+				
+		<hr><h3 id="htmlStructure"><strong>B) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>
+			This website template (as you already know) is a one-page template which means that all content is in the only one html file. 
+			I have explained the layout structure already, here you can see the html code examples.
+		</p>
+		
+		<h3 id="htmlGeneral"><strong>B.1) General</strong> - <a href="#toc">top</a></h3>
+		<p>
+			This is the layout in general.
+		</p>
+		<p> 
+			There are div.pages inside main wrappers. This div contains blocks with a class name 'page'. 
+			These div blocks are the pages of your web site. Div.page blocks are placed one after another but only selected page will be seen to a website viewer. 
+			You can delete some of them, modify or add new.
+		</p>
+		<img src="assets/images/htmlStructureGeneral.jpg" alt="General Structure" />
+		<br />
+		<br />
+		
+		<h3 id="htmlPages"><strong>B.2) Pages</strong> - <a href="#toc">top</a></h3>
+		<p>
+			Lets look closer to the page block. This structure below must be used for any page. Don't forget to add a unique ID for each block. 
+		</p>
+		<img src="assets/images/pageblock.jpg" alt="Page Block" />
+		<p>
+			Place your content inside div.content block. Div.b-top is for the page title and for the short intro text (use 'H2' and 'P' elements). 
+			The rest of your content should be placed after div.b-top . 
+			Check 'Styles' page of the 'scrollable_full' example of the package to get the list of html elements that can be used for html markup. 
+			Remember that div.header and div.footer will be cloned right before and after div.content block.
+		</p>
+		
+		<h3 id="htmlHeaderFooter"><strong>B.3) Header and Footer</strong> - <a href="#toc">top</a></h3>
+		<p>
+			Div.header is a container for the website header (div.b-header) and for the navigation (div.mainmenu). 
+			Div.b-header is a simple thing, change the name/logo to your own name here. The div.b-mainmenu is a bit more complicated. 
+			We bind navigation link to particular div.page by its ID to 'rel' attribute of the A element. 
+			In addition, we use 'href'. The 'href' attribute is used when the javascript support is switched off.
+		</p>
+		<p>
+			Div.header should be placed in the first div.page before div.content block. 
+			Javascript will clone it to all other div.page blocks in the same place, so you don't have to do that manually.
+		</p>
+		
+		<img src="assets/images/header.jpg" alt="Header" />
+		<br />
+		<br />
+		<p>
+			Div.footer should be placed in the last div.page after div.content block. 
+			The footer holds links of social services and some text paragraph with your contact and copyright information. 
+			Javascript will clone it to all other div.page blocks in the same place as well (no need to do that manually).
+		</p>
+		
+		<img src="assets/images/footer.jpg" alt="Footer" />
+		<br />
+		<br />
+		
+		<h3 id="htmlNivoSlider"><strong>B.4) Nivo Slider</strong> - <a href="#toc">top</a></h3>
+		<p>
+			Nivo-slider is used on Home page of the website. This is just a div with images. 
+			Note that only images or images wrapped in links are allowed for the slider div. 
+			Any other HTML will break the slider.
+		</p>
+		<p>
+			To add a caption to an image you simply need to add a title attribute to the image. 
+			To add a HTML Caption simply set the title attribute to the ID of an element that contains your caption (prefixed with a hash). 
+			Note that the HTML element that contains your caption must have the CSS class nivo-html-caption applied and must be outside of the slider div. 
+		</p>
+		
+		<img src="assets/images/nivo-slider.jpg" alt="Nivo Slider" />
+		<br />
+		<br />
+		<p>
+			More information about nivo-slider you will find following the link <a href="http://nivo.dev7studios.com/">http://nivo.dev7studios.com/</a>.
+			If you are ok with javascript and jquery then you can modify the nivo-slider settings in js/script.js file starting from line 8.
+		</p>
+		
+		
+		<h3 id="htmlPortfolioPages"><strong>B.4) Portfolio pages / Sub blocks</strong> - <a href="#toc">top</a></h3>
+		<p>
+			You can see that something like a slider is used on Portfolio pages to show the works in a sequence. 
+			This is called 'sub blocks' here and it works much like the main navigation of the site. 
+			See more explanations <a href="#templateSubblocks">here</a>.
+		</p>
+		<p>
+			Div.blocks-holder is a 'frame' for div.blocks which in its  turn is a container for all sub blocks (div.block). Each sub block must have its unique ID.
+		</p>
+		<img src="assets/images/subblocks.jpg" alt="Sub blocks" />
+		<br /><br />
+		<p>
+			This is how the sub block should look like (example below). As you can see everything is simple. 
+			The work title, unordered list for thumbnails and a text with details. 
+			Remember to add a class name 'fancy' to the links for the bigger images to open them in a fancybox. 
+			Also, if you are familiar with  javascript and jquery you can edit more fancybox settings in js/scripts.js file (starting from line 149).
+		</p>
+		<p>
+			Be careful with the navigation between the blocks. How to set up the links is described <a href="#templateNavigation">here</a>. 
+			From the example you can see where to place them (p.b-websites-nav).
+		</p>
+		<img src="assets/images/subblock.jpg" alt="Sub block" />
+		<br /><br />
+		
+		<hr><h3 id="css"><strong>C) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>		
+        
+		<p>
+			You will find four css files in 'css/lib' directory. 
+			As you can see from the names, they are for the 'reset', 'typography', 'fonts' and 'forms'. 
+			Also some css files are in 'css' directory. 
+			One of them is the 'style.css' which contains the general styling for the website. 
+			Others are 'nivo-slider.css', 'custom-nivo-slider.css', 'jquery.twitter.css' and 'print.css'.
+			 Css file for fancybox styling can be found in 'js/fancybox' directory.
+		</p>
+		<p>
+			The style.css and print.css are included in the 'head' of the html files using 'A' element. 
+			All other css files are included at the beginning of the style.css file by using @import method. 
+			Most important are the 'lib' files. All fonts, forms and typography styles are described there. 
+			Inclusion of them at the beginning of the style.css file gives us the ability to rewrite some of the attributes later.
+		</p>
+		
+		
+		<hr><h3 id="javascript"><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>
+        <p>
+            This theme imports a lot of javascript files.
+        </p>
+        <ol>
+            <li>
+                <strong>jQuery</strong><br />
+				jQuery is a Javascript library that greatly reduces the amount of code that you must write.
+				<br />
+				<br />
+            </li>
+            <li>
+                <strong>script.js</strong><br />
+				This file holds all scripts which control the layout and navigation.<br />
+				Also this file is used to set up and initialize all jquery plug-ins.
+				<br />
+				<br />
+            </li>
+		 	<li>
+                <a href="http://css3pie.com/"><strong>css3pie</strong></a><br />
+				PIE makes Internet Explorer 6-8 capable of rendering several of the most useful CSS3 decoration features.<br />
+				Just add the row to your css block url('css/pie/PIE.htc') and IE will start to render shadows, background gradients etc.
+				<br />
+				<br />
+            </li>
+			<li>
+				<a href="http://fancybox.net/"><strong>jquery.fancybox</strong></a><br />
+				FancyBox is a tool for displaying images, html content and multi-media in a "lightbox" that floats overtop of web page.
+				Add a class name 'fancy' to a link to use it. More settings for fancybox can be added in js/script.js starting from line 149.
+				<br />
+				<br />
+			</li>
+			<li>
+				<a href="http://nivo.dev7studios.com/"><strong>jquery.nivo.slider</strong></a><br />
+				Nivo slider is used to show images on the Home page. Its set up is in the js/script.js file starting from 8 line.<br />
+				Check the link for more options.
+				<br />
+				<br />
+			</li>
+			<li>
+				<strong>jquery.form and jquery.validate</strong><br />
+				These are plug-ins for the contact form.
+				<br />
+				<br />
+			</li>
+			<li>
+				<strong>jquery.scrollTo</strong><br />
+				This jquery plug-in is used to add a smooth scroll-to effect to the website navigation.
+				<br />
+				<br />
+			</li>
+			<li>
+				<a href="http://coda.co.za/blog/2008/10/26/jquery-plugin-for-twitter"><strong>jquery.twitter</strong></a><br />
+				This one is used to show your latest tweets on contact page. Change the username in js/script.js file on line 15.
+			</li>
+        </ol>
+		
+       
+		
+		<hr><h3 id="contact"><strong>E) Contact Form and PHP Code Explanation</strong> - <a href="#toc">top</a></h3>
+		<p>
+			Two jquery plug-ins jquery.form and jquery.validate are used to set up the contact form. 
+			Jquery.form allows to use AJAX method for submitting the form. Jquery.validate validates the form before submitting.
+		</p>
+		<p>
+			After the form is submitted and all fields are filled correctly the sendmail.php will be executed. 
+			Your must set your email address on the second line of the file. 
+			This is a really simple php script. It just sends the mail using php mail() function.
+		</p>
+		
+        <hr><h3 id="psdFiles"><strong>F) PSD Files</strong> - <a href="#toc">top</a></h3>
+        <p>
+            I've included four psds with this template:
+        </p>
+        <ol>
+            <li>
+                <strong>johnsmith_website_design.psd</strong><br />
+				You can play with colors and positioning before modifying the html files.
+				<br />
+				<br />
+            </li>
+			<li>
+                <strong>johnsmith_portfolio_thumb_dummy.psd</strong><br />
+				You can use this file to create the websites thumbnail images.
+				<br />
+				<br />
+            </li>
+            <li>
+                <strong>johnsmith_print_thumb_dummy.psd</strong><br />
+				You can use it to create the print thumbnail images.
+				<br />
+				<br />
+            </li>
+            <li>
+                <strong>safari.psd</strong><br />
+				The blank safari browser page screenshot, just in case. 
+            </li>
+        </ol>
+		
+        <hr><h3 id="credits"><strong>G) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+        <p>
+            I've used the following images, icons and scripts as listed.
+            <ul>
+                <li>
+                    <a href="http://icondock.com/free/vector-social-media-icons">Vector Social Media icons</a>
+                </li>
+                <li>
+                    <a href="http://www.adorepaper.eu/">Diana Didyk graphic works</a>
+                </li>
+                <li>
+                    <a href="http://www.fontsquirrel.com/license/Bebas">Bebas @font-face Kit</a>
+                </li>
+                <li>
+                    <a href="http://css3pie.com/ ">css3pie</a>
+                </li>
+				<li>
+					<a href="http://fancybox.net/">jquery.fancybox</a>
+				</li>
+				<li>
+					<a href="http://nivo.dev7studios.com/">jquery.nivo.slider</a>
+				</li>
+				<li>
+					<a href="http://jquery.malsup.com/form/">jquery.form</a>
+				</li>
+				<li>
+					<a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jquery.validate</a>
+				</li>
+				<li>
+					<a href="http://flesler.blogspot.com/2007/10/jqueryscrollto.html ">jquery.scrollTo</a>
+				</li>
+				<li>
+					<a href="http://gsgd.co.uk/sandbox/jquery/easing/">jquery.easing</a>
+				</li>
+				<li>
+					<a href="http://coda.co.za/blog/2008/10/26/jquery-plugin-for-twitter">jquery.twitter</a>
+				</li>
+            </ul>
+
+            <hr>
+            <p>
+                Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.
+            </p>
+            <p class="append-bottom alt large">
+                <strong>Sergei Odincov</strong>
+            </p>
+            <p>
+                <a href="#toc">Go To Table of Contents</a>
+            </p>
+            <hr class="space">
+            </div><!-- end div .container -->
+        </body>
+        </html>

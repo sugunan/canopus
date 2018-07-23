@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+/* Hide navigations
+----------------------------------------------------*/
+a.goto,
+a.nav,
+a.subnav,
+.b-header span.img,
+.b-style-switcher,
+.b-websites-nav,
+.mainmenu,
+.b-social-icons {
+	display: none;
+}
+
+/* Set up font family
+-----------------------------------------------------*/
+.button,
+.b-site-title,
+h1,h2,h3,h4,h5,h6, p { 
+	font-family: Arial, Tahoma, sans-serif;
+}
+
+/* Set up top margin for correct positioning
+-----------------------------------------------------*/
+.header {
+	margin-top:65px;
+}

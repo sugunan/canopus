@@ -1,0 +1,351 @@
+@CHARSET "UTF-8";
+@import 'lib/reset.css';
+@import 'lib/fonts.css';
+@import 'lib/typography.css';
+@import 'lib/forms.css';
+@import 'jquery.twitter.css';
+@import 'nivo-slider.css';
+
+/* 
+	l- stands for layout
+	b- stands for block
+-------------------------------------------------------------- */
+
+
+html { 
+	height:100%; 
+	overflow-y: scroll; 
+	overflow: -moz-scrollbars-vertical /* to avoid jumping content */; 
+}
+body {
+	height:100%;
+    min-height:100%;    
+    width: 100%;
+    min-width: 980px;
+    /* Select background */
+    /*background: url('../images/bg.png') white top center no-repeat;*/
+    /*background: url('../images/aqua_blue.gif') white top center  no-repeat;*/
+    /*background: url('../images/aqua_magenta.gif') white top center  no-repeat;*/
+    /*background: url('../images/aqua_grey.gif') white top center  no-repeat;*/
+    /*background: url('../images/aqua_coffee.gif') white top center  no-repeat;*/
+    background: url('../images/photo_lines.jpg') center top no-repeat black;
+    /*background: url('../images/photo_lights.jpg') center left no-repeat black;*/
+}
+
+
+/* Basic layout wrappers
+-------------------------------------------------------------- */
+.l-outer {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;	
+}
+.l-frame { 
+	margin: 0 auto;
+	width: 950px;
+	padding-left: 20px;
+	padding-right: 20px;
+	overflow: hidden;
+}
+.l-frame-inner { 
+	padding: 0 25px; 
+	position: relative; 
+	background-color: white; 
+	overflow:hidden; 
+	
+	-moz-box-shadow: #666 0px 0px 20px;
+	-webkit-box-shadow: #666 0px 0px 20px ;
+	box-shadow:  #666 0px 0px 20px;
+	
+	/* this behavior some how affects scroll-to in IE8 so i've decided no to use shadows for it */
+	/*behavior: url('css/pie/PIE.htc');*/
+}
+.l-frame-inner p.slider { color: #666; margin: 0; padding: 0; }
+
+
+
+/* Header
+-------------------------------------------------------------- */
+/* Sub title */
+.b-site-title {
+	float: right;
+	width: 100%;
+	font-family: 'BebasRegular', Arial, sans-serif;
+	text-align: right;
+	font-size: 1.75em; 
+	margin-top: -2.35em;
+}
+
+
+
+/* Main menu
+-------------------------------------------------------------- */
+.b-menu { margin: 5px 0 30px 0; float: left; clear: both; width: 100%; list-style: none; }
+.b-menu li { float: left; margin-right: 10px; font-family: 'BebasRegular', Arial, sans-serif; word-spacing: 0.25em; font-size: 0.9em; }
+.b-menu li a { color: black; text-decoration: none; }
+.b-menu li a.active { border-bottom: solid 2px black; }
+.b-menu li a:hover { background: black; color: white; }
+
+
+
+/* Pages 
+-------------------------------------------------------------- */
+/* all pages wrapper*/
+.b-pages {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+/* page wrapper */
+.b-page { 
+	position: relative;
+	float: left; 
+	width: 100%;
+}
+
+/* Page top block with a grey background */
+.b-top {
+	float: left;
+	background: url('../images/top-top-shadow.png') #F4F4F4 top left repeat-x;
+	
+	width: 950px;
+	margin-left: -25px;
+	margin-right: -25px;
+	
+	margin-top: 0px;
+	margin-bottom: 40px;
+}
+.b-top-inner {
+	float: left;
+	padding: 25px 25px 5px 25px; 
+	width: 900;
+	background: url('../images/top-bottom-shadow.png') bottom left repeat-x;
+}
+.b-top-inner h2 { font-size: 1.75em; color: #666; }
+.b-top-inner p { margin: 0; padding: 0 0 20px 0; }
+
+/* page content wrapper */
+.content {
+	float: left;
+	width: 100%;
+	clear: both;
+	padding-bottom: 125px;
+}
+
+/* sub blocks wrappers */
+.b-blocks-holder {
+	float: left;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.b-sub-blocks { 
+	position: relative;
+	float: left; 
+	width: 100%;
+	margin: 0 0 35px 0;
+}
+/* sub block wrapper */
+.b-sub-block {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+
+
+/* Start page and portfolio links 
+-------------------------------------------------------------- */
+a.goto,
+a.subnav  { 
+	font-family: 'BebasRegular', Arial, sans-serif;
+	word-spacing: 0.35em;
+	margin-right: 10px;
+	display: block; float: left; line-height: 1em; text-decoration: none; 
+}
+
+
+a.subnav,
+a.goto {
+	background: #333;
+	color: white;
+	padding: 4px 6px;
+	font-size: 0.75em;
+	
+	-moz-border-radius: 2px; 
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	
+	behavior: url('css/pie/PIE.htc');	
+}
+
+a.goto,
+a.subnav.next { background: url('../images/btn_next.png') #333 no-repeat left center; padding-left: 8px; }
+a.subnav.prev { background: url('../images/btn_prev.png') #333 no-repeat right center; padding-right: 8px; }
+
+a.subnav:hover,
+a.goto:hover { background-color: black; color: white; }
+
+
+/* Start page 
+-------------------------------------------------------------- */
+/* slider */
+.b-slider {
+	float: left;
+	width: 900px;
+	height: 300px;
+	margin: 3px 0 32px 0;
+	-moz-box-shadow:0px 0px 7px #a4a4a4;
+	-webkit-box-shadow:0px 0px 7px #a4a4a4;
+	box-shadow:0px 0px 7px #a4a4a4;
+	
+	/*behavior: url('../css/pie/PIE.htc');*/
+}
+/* welcome text block */
+.b-welcome {
+	float: left;
+	margin-top: -15px;
+	padding-bottom: 15px;
+	border-bottom: dotted 1px #d5d5d4;
+}
+
+/* featured works */
+.b-featured-works-holder {
+	float: left;
+	position: relative;
+	width: 898px;
+	margin: 20px 0 25px 1px;
+}
+.b-featured-works-holder.developer { margin-top: 0px; }
+.b-featured-work {
+	float: left;
+	position: relative;
+	width: 280px;
+	padding-right: 13px;
+	margin-right: 17px;
+	padding-bottom: 15px;
+	border-right: dotted 1px #d5d5d4;
+}
+.b-featured-work.third { margin-right: -4px; float: right; padding-right: 0px; border: none; }
+.b-featured-work img { margin-top: 10px; margin-left: -3px; margin-bottom: 10px; }
+.b-featured-work p { width: 99%; }
+
+
+
+/* CV Page Blocks
+-------------------------------------------------------------- */
+/* top block of the page (with a grey background) */
+.b-cv-meta h3 { margin: 4px 0 10px 0 !important; padding: 0 !important; }
+.b-cv-meta p { padding: 0; margin: 0 0 15px 0; }
+.b-cv-meta {
+	float: right;
+	width: 87%;
+}
+.b-cv-meta p { padding: 0; margin: 0 0 15px 0; }
+.b-cv-picture {
+	float: left;
+	width: 12%;
+	margin-bottom: 10px;
+}
+.b-cv-picture span {
+	float: left;
+	border: solid 1px #CFCFCF;
+	padding: 4px;
+	background: white;
+}
+.b-cv-picture img { float: left; }
+
+
+/* cv content */
+.cv h2 { color: #d4d4d4; padding: 0.15em 0 1em 0;  }
+.cv .b-top-inner h2 { color: #666 !important; }
+.cv h3 { margin: 0; padding: 0; }
+.cv h3 span { float: right; }
+.cv .smaller { margin-bottom: 0.75em; margin-top: 2px; }
+.cv .small { margin-bottom: 3em; }
+
+.b-cv-row {
+	float: left;
+	padding-left: 37px;	
+}
+.b-cv-row.top { margin-top: -10px; }
+
+
+/* Styles Page Blocks
+-------------------------------------------------------------- */
+.b-style.right {
+	float: right;
+	width: 70%;
+}
+.b-style.left {
+	float: left;
+	width: 40%;
+	margin-left: -42.5%;
+}
+
+/* Portfolio Page
+-------------------------------------------------------------- */
+.b-portfolio-thumbs { 
+	float: left; margin: 15px 0; padding: 0; width: 102%; 
+	border-top: dotted 1px #d5d5d4;
+	border-bottom: dotted 1px #d5d5d4;
+}
+.b-portfolio-thumbs li { list-style: none; float: left; margin-right: 15px; padding-top: 15px; padding-bottom: 10px; }
+
+
+
+/* Contact Page Blocks
+-------------------------------------------------------------- */
+.b-contact-form {
+	float: left;
+	width: 65%;	
+}
+.b-twitter {
+	float: right;
+	width: 28%;
+	padding-left: 3%;
+	margin-top: 0px;
+	margin-bottom: 50px;
+	padding-top: 0px;
+	padding-bottom: 30px;
+	border-left: dotted 1px #ccc;
+}
+.b-form-reply,
+.b-form-actions {
+	float: left;
+	margin-left: 10px;
+	margin-top: 26px;	
+}
+.b-form-reply {
+	font-size: 1em;
+	text-transform: uppercase;
+	color: grey;
+}
+.b-twitter h3 {
+	padding-bottom: .75em; 
+	color: #ccc;
+}
+
+
+/* Footer and Social icons blocks
+-------------------------------------------------------------- */
+.footer {
+	position: absolute; 
+	bottom: 15px; 
+	left:0;
+}
+.b-footer { 
+	float: left;
+	border-top: dotted 1px #d5d5d4;
+	width: 100%;
+}
+.b-footer p { padding: 0; margin: 0; }
+
+.b-social-icons {
+	float: left;
+	width: 100%;
+	margin: 15px 0 5px 0;
+	list-style: none;
+}
+.b-social-icons li { float: left; margin-right: 7px; }
+.b-social-icons li a img { width: 17px; height: 17px; }

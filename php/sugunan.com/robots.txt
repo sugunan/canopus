@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /external/
+Disallow: /application/
+Disallow: /library/
+Disallow: /SpryAssets/
+Disallow: /Scripts/
+Disallow: /resource/
+Disallow: /application/
+Disallow: /games/chess/classes/
+Disallow: /games/chess/config/
+Disallow: /games/chess/css/
+Disallow: /games/chess/resources/
+Disallow: /games/chess/js/
+Disallow: /games/chess/Zend/
+Disallow: /sites/scitam/
+Allow: /library/sitemap-forum.xml
+Allow: /
